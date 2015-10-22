@@ -11,7 +11,9 @@
     </div>
     <div class="collapse navbar-collapse" id="navigation">
       <ul class="nav navbar-nav">
-        <li><a href="{{pathFor 'postSubmit'}}">Enviar Post</a></li>
+<!--         <li><a href="{{pathFor 'postSubmit'}}">Enviar Post</a></li>
+La forma fácil de evitar que los usuarios lleguen al formulario es esconder el enlace. Podemos hacerlo fácilmente desde header.html:-->
+       {{#if currentUser}}<li><a href="{{pathFor 'postSubmit'}}">Enviar Post</a></li>{{/if}}
       </ul>
       <ul class="nav navbar-nav navbar-right">
         {{> loginButtons}}
